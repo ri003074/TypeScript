@@ -1,0 +1,12 @@
+version: '3.2'
+
+services:
+  typescript:
+    build: .
+    container_name: 'typescript'
+    volumes:
+      - ./:/app/ 
+      - /app/node_modules/
+    stdin_open: true
+    tty: true
+    command: npx ts-node-dev --respawn src/a.ts
